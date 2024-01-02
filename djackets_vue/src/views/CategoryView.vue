@@ -6,18 +6,10 @@
                     {{ category.name }}
                 </h2>
             </div>
-            <div class="column is-3" v-for="product in category.products" v-bind:key="product.id">
-                <div class="box">
-                    <figure class="image mb-4">
-                        <img v-bind:src="product.get_thumbnail">
-                    </figure>
-
-                    <h3 class="is-size-4">{{ product.name }}</h3>
-                    <p class="is-size-6 hast-text-grey"> {{ '$ ' + product.price }}</p>
-
-                    <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View Details</router-link>
-                </div>
-            </div>
+            <ProductBox
+                v-for="product in category.products"
+                v-bind:key="product.id"
+                v-bind:product="product" />
         </div>
     </div>
 </template>
@@ -25,11 +17,13 @@
 <script>
 import axios from 'axios'
 import { toast } from 'bulma-toast'
+import ProductBox from '@/components/ProductBox'
 
 
 export default {
     name: 'Category',
     components: {
+        ProductBox,
     },
     data() {
         return {
@@ -41,6 +35,13 @@ export default {
     mounted() {
         this.getCategory()
     },
+    watch: {
+        $route(to, from) {
+            if (to.name === 'Category') {
+                this.getCategory()
+            }
+        }
+    },  
     methods: {
         async getCategory() {
             const category_slug = this.$route.params.category_slug
