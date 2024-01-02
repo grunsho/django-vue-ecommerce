@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
+import HomeView from '../views/HomeView.vue'
 import Product from '../views/ProductView.vue'
 import Category from '../views/CategoryView.vue'
 import Search from '../views/SearchView.vue'
+import Cart from '../views/CartView.vue'
 
 const routes = [
     {
@@ -20,14 +21,19 @@ const routes = [
         component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     },
     {
-        path: '/:category_slug/:product_slug',
-        name: 'Product',
-        component: Product
-    },
-    {
         path: '/search',
         name: 'Search',
         component: Search
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: Cart
+    },
+    {
+        path: '/:category_slug/:product_slug',
+        name: 'Product',
+        component: Product
     },
     {
         path: '/:category_slug',
