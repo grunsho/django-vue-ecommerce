@@ -16,9 +16,7 @@
                 "DELETE",
                 "PATCH",
                 "OPTIONS"
-            ],
-            "headers": {
-                "Access-Control-Allow-Origin": "*"}
+            ]
         }
     ]
 }
