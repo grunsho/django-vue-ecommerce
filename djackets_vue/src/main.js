@@ -5,5 +5,5 @@ import store from './store'
 import axios from 'axios'
 
 // 
-axios.defaults.baseURL = 'https://grunsho.pythonanywhere.com'
+axios.defaults.baseURL = "https://django-vue-ecommerce-bewa.vercel.app/";
 createApp(App).use(store).use(router, axios).mount('#app')
