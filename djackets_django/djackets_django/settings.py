@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wk483sts=y#7zstezw(p+e=z-50%sd&%6t!))ufvln5#)b%*j#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://django-vue-ecommerce-bewa.vercel.app/']
+ALLOWED_HOSTS = ['*vercel.app/']
 
 STRIPE_SECRET_KEY = 'pk_test_51OUcR7KgNGr7b1yZpRCVPeAvpP5ZQ504iKRMEBNxOyrc3mWe2nSURvuaPJq0cvgBDgB8wGrcg08DTpYDhPOD23EI00iBn2qGCi'
 
