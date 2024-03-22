@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOW_HEADERS = "*"
+CORS_ALLOWED_ORIGINS = ['https://django-vue-ecommerce.vercel.app']
 CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:8081',
     'http://localhost:8081',
